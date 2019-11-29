@@ -47,7 +47,7 @@ try {
                 app.use('/lists', listsRoute());
                 app.use('/api/lists', listsRoute());
 
-                app.listen(config.PORT || 3000, err => {
+                app.listen(process.env.PORT, '0.0.0.0', err => {
                     if (err) {
                         throw new Error(err);
                     }
