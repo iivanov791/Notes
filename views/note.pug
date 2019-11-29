@@ -1,0 +1,25 @@
+head
+include layouts/head
+    block title
+body
+    div(class = "container-fluid")
+        form(onSubmit="onSubmitRewriteNoteForm(event)")
+            div(class="form-group")
+                label Title
+                input(type="text", class="form-control", id="noteTitle", name="Title", value=note.title)
+
+            div(class="form-group")
+                label Expired Date
+                input(type="text", class="form-control", id="expiredDate", value=note.expired_at)
+
+            div(class="form-group")
+                label Content
+                input(id="noteBody", class="form-control", value=note.content)
+
+            input(class="d-none d-sm-none d-md-none d-lg-none" id="id" value=note._id.toString())
+
+            button(type="submit" class="btn btn-success") Внести изменения
+
+        button(type="submit" class="btn btn-danger" onclick="onDeleteBtnClick(event)") Удалить заметку
+
+    script(src="/js/script.js")

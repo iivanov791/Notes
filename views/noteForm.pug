@@ -1,0 +1,23 @@
+head
+include layouts/head
+    block title
+body
+        div(class = "container-fluid")
+            form(onSubmit="onSubmitAddClientForm(event)")
+                div(class="form-group")
+                    input(type="text", class="form-control", id="noteTitle", name="Title", value="", placeholder="Заголовок записки")
+
+                div(class="form-group")
+                    label Expired Date
+                    input(type="date", class="form-control", id="expiredDate", name="Date",)
+
+                div(class="form-group")
+                    textarea(id="noteBody" class="form-control z-depth-1" rows="6" placeholder="Напишите здесь что-нибудь")
+
+                button(type="submit", class="btn btn-primary") Создать заметку
+
+        footer
+            include layouts/foot
+
+
+

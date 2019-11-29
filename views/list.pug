@@ -1,0 +1,25 @@
+head
+include layouts/head
+
+body
+    div(class = "container-fluid")
+        form(onSubmit="onSubmitRewriteListForm(event)")
+            div(class="form-group")
+                label Title
+                input(type="text", class="form-control", id="listTitle", name="Title", value=list.title)
+
+            div(class="form-group" id="divTask")
+                each task, index in list.content
+                    div(class="task" id= index)
+                        input(type="checkbox")
+                        input(type="text" name="Task" value= task class="form-control")
+                        button(type="button" onclick="onDeleteTaskClick(event)") X
+                button(type="button" class="btn btn-outline-secondary" onclick="onAddTaskBtnClick(event)") Добавить задачу
+
+            input(class="d-none d-sm-none d-md-none d-lg-none" id="id" value=list._id.toString())
+
+            button(type="submit" class="btn btn-success") Внести изменения
+
+        button(type="submit" class="btn btn-danger" onclick="onDeleteListClick(event)") Удалить задачник
+
+    script(src="/js/putDelete.js")

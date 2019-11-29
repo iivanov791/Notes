@@ -1,0 +1,19 @@
+head
+include layouts/head
+
+body
+    div(class = "container-fluid")
+        form(onSubmit="onSubmitAddNewList(event)")
+            div(class="form-group")
+                input(type="text", class="form-control", id="listTitle", name="Title", value="", placeholder="Название списка задач")
+
+            div(class="form-group" id="inputDiv")
+                label Tasks
+                input(type="text", class="form-control", name="Task", required="true" placeholder="Task...")
+
+                button(type="button" class="btn btn-outline-secondary" onclick="onAddInputBtnClick(event)") Добавить задачу
+
+            button(type="submit", class="btn btn-primary") Создать список задач
+
+    footer
+        script(src="/js/list.js")
